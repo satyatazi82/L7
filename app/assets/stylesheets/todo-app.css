@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 500px;
+  margin: 30px auto;
+}
+
+.title {
+  font-size: 25px;
+  color: #453c52;
+  letter-spacing: 0.14px;
+  margin-bottom: 10px;
+}
+
+.todoForm {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 30px;
+}
+
+.todoList-count {
+  font-size: 12px;
+  color: #453c52;
+  letter-spacing: 0.09px;
+}
+
+.todoList__timestamp {
+  font-size: 12px;
+  color: #726a7e;
+  letter-spacing: 0.09px;
+}
+
+.todoForm__textInput,
+.todoForm__dueDateInput {
+  background: #ffffff;
+  border: 1px solid #bfb8cc;
+  border-radius: 4px;
+  border-radius: 4px;
+  padding: 7px;
+}
+
+.todoForm__submitBtn {
+  background: #48bb78;
+  border-radius: 4px;
+  border-radius: 4px;
+  border: none;
+  font-family: OpenSans-Semibold;
+  font-size: 14px;
+  padding: 7px 22px;
+  color: #ffffff;
+  letter-spacing: 0.1px;
+}
+
+.todoList-heading {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todoList_heading h3 {
+  font-size: 14px;
+  color: #453c52;
+  letter-spacing: 0.1px;
+}
+
+.todoList {
+  margin-bottom: 20px;
+}
+
+.todoList-list {
+  list-style: none;
+  display: grid;
+  padding-left: 10px;
+  justify-items: flex-start;
+  row-gap: 5px;
+}
+
+.todoList-list_item {
+  display: inline-flex;
+  column-gap: 10px;
+  padding: 5px;
+  align-items: center;
+  font-size: 14px;
+  color: #453c52;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+}
+
+.list_item-overdue {
+  font-size: 12px;
+  color: #c53030;
+  letter-spacing: 0.09px;
+}
+
+.list_item-text--completed {
+  text-decoration: line-through;
+}
+
+.todoList-list_item:hover {
+  background: #f1edf7;
+  border-radius: 4px;
+}
+
+.todoList-list_item:hover .list_item-deleteBtn {
+  visibility: visible;
+}
+
+.list_item-deleteBtn {
+  border: none;
+  visibility: hidden;
+  background: none;
+}
+
+.list_item-deleteBtn img {
+  width: 15px;
+  height: 15px;
+}
+
+.list_item-duedate {
+  font-size: 14px;
+  color: #beb8c8;
+}

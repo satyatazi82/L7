@@ -1,0 +1,20 @@
+<div class="todoList">
+  <div class="todoList-heading">
+    <h3><%= section_label %></h3>
+    <span class="todoList-count"><%= todos.completed.count %>/<%= todos.length %></span>
+  </div>
+  <ul class="todoList-list">
+    <% todos.each do |todo| %>
+      <li class="todoList-list_item">
+        <input type="checkbox" <%= todo.completed && 'checked' %> >
+        <span class="list_item-text <%= todo.completed && 'list_item-text--completed' %>"> <%= todo.todo_text %></span>
+        <% if showDate %>
+          <span class="list_item-duedate"> <%= todo.due_date.to_s(:short) %></span>
+        <% end %>
+        <%# <span class="list_item-overdue">Overdue</span> %>
+        <button class="list_item-deleteBtn"><img src="./delete.png"></button>
+      </li>
+    <% end %>
+  </li>
+</ul>
+</div>
