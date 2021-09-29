@@ -6,13 +6,17 @@
   <ul class="todoList-list">
     <% todos.each do |todo| %>
       <li class="todoList-list_item">
-        <input type="checkbox" <%= todo.completed && 'checked' %> >
+        <%= form_with url: "/todos/#{todo.id}", method: "patch" do |form| %>
+          <input type="checkbox" name="completed" <%= todo.completed && 'checked' %> onclick="this.form.submit()" >
+        <% end %>
         <span class="list_item-text <%= todo.completed && 'list_item-text--completed' %>"> <%= todo.todo_text %></span>
         <% if showDate %>
           <span class="list_item-duedate"> <%= todo.due_date.to_s(:short) %></span>
         <% end %>
         <%# <span class="list_item-overdue">Overdue</span> %>
-        <button class="list_item-deleteBtn"><img src="./delete.png"></button>
+        <%= form_with url: "/todos/#{todo.id}", method: "delete" do |form| %>
+          <button class="list_item-deleteBtn"><img src="./delete.png"></button>
+        <% end %>
       </li>
     <% end %>
   </li>
