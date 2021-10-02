@@ -1,4 +1,13 @@
 class Todo < ActiveRecord::Base
+  belongs_to :user
+  validates :todo_text, presence: true
+  validates :todo_text, length: { minimum: 2}
+  validates :due_date, presence: true
+
+  def self.of_user(user)
+    where(user_id: user.id)
+  end
+
   def due_today?
     due_date == Date.today
   end
@@ -34,16 +43,16 @@ class Todo < ActiveRecord::Base
   def self.updateTask(id, completed)
     todo = Todo.find(id)
     todo.completed = completed
-    todo.save!
+    todo.save
     todo
   end
 
   def self.createTask(h)
-    Todo.create!(todo_text: h[:text], due_date: h[:due], completed: false)
+    Todo.create(todo_text: h[:text], due_date: h[:due], completed: false)
   end
 
   def self.add_task(h)
-    Todo.create!(todo_text: h[:todo_text], due_date: Date.today + h[:due_in_days], completed: false)
+    Todo.create(todo_text: h[:todo_text], due_date: Date.today + h[:due_in_days], completed: false)
   end
 
   def self.mark_as_complete(id)

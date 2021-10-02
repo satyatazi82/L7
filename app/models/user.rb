@@ -1,4 +1,14 @@
 class User < ActiveRecord::Base
+  validates :firstname, presence: true
+  validates :email, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :password, length: { minimum: 2}
+  validates :password, presence: true
+
+  has_secure_password
+
+  has_many :todos
+
   def to_displayable_string
     "#{id}. #{name} #{email}"
   end
@@ -8,7 +18,8 @@ class User < ActiveRecord::Base
   end
 
   def self.register(hash)
-    User.create!(name: hash[:name], email: hash[:email], password: hash[:password])
+    User.new(firstname: hash[:firstname], lastname: hash[:lastname], email: hash[:email], password: hash[:password])
+
   end
 
   def self.to_displayable_list

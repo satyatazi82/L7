@@ -8,7 +8,7 @@
       <button type="submit" class="todoForm__submitBtn">Add</button>
     </div>
   <% end %>
-  <%= render partial: "todos-section", locals: {section_label: "Overdue", todos: Todo.overdue.notcompleted, showDate: true} %>
-  <%= render partial: "todos-section", locals: {section_label: "Due Today", todos: Todo.due_today, showDate: false }%>
-  <%= render partial: "todos-section", locals: {section_label: "Due Later", todos: Todo.due_later, showDate: true } %>
+  <%= render partial: "todos-section", locals: {section_label: "Overdue", todos: @todos.overdue.notcompleted, showDate: true} %>
+  <%= render partial: "todos-section", locals: {section_label: "Due Today", todos: @todos.due_today, showDate: false }%>
+  <%= render partial: "todos-section", locals: {section_label: "Due Later", todos: @todos.due_later, showDate: true } %>
 </div>

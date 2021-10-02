@@ -1,0 +1,33 @@
+.userForm-ct {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 500px;
+  margin: 30px auto;
+}
+
+.userForm-ct .label {
+  margin-top: 10px;
+}
+
+.userForm-ct .userForm-title {
+  margin-bottom: 30px;
+}
+.userForm-ct input {
+  background: #ffffff;
+  border: 1px solid #bfb8cc;
+  border-radius: 4px;
+  border-radius: 4px;
+  padding: 7px;
+}
+
+.userForm-ct .submit {
+  background: #48bb78;
+  border-radius: 4px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  padding: 7px 22px;
+  color: #ffffff;
+  letter-spacing: 0.1px;
+}

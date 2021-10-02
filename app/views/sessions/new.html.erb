@@ -1,0 +1,10 @@
+<%= form_with url: signin_path , method: "post", class: "userForm-ct" do |userForm| %>
+  <h1 class="userForm-title">Login</h1>
+  <label class="label">Email:</label>
+  <%= userForm.text_field :email, placeholder: "Email", class: "userForm-email"      %>
+  <label class="label">Password:</label>
+  <%= userForm.text_field :password, placeholder: "Password", class: "userForm-password"     %>
+  <%= userForm.button :submit, class: "submit" do %>
+    Register
+  <% end %>
+<% end %>
